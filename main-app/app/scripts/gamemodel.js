@@ -1,1 +1,0 @@
-noughtsAndCrossesApp.factory('gameModel', function(){});
