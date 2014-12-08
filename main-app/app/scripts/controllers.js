@@ -1,4 +1,4 @@
-noughtsAndCrossesApp.controller('noughtsAndCrossesController', function ($scope,gameModel){
+noughtsAndCrossesApp.controller('noughtsAndCrossesController', function ($scope,gameModel,$http){
 
     $scope.gameModel = gameModel;
 
@@ -10,7 +10,7 @@ noughtsAndCrossesApp.controller('noughtsAndCrossesController', function ($scope,
        console.log('New Game Created'));
     };
 
-    var callServer = {
+    $http.callServer = {
         method: 'POST',
         url: '',
         data: '',
