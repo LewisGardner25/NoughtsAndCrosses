@@ -1,4 +1,3 @@
-
 var copyTask = require('./.grunt/copytask');
 var cleanTask = require('./.grunt/cleantask');
 var jshintTask = require('./.grunt/jshinttask');
@@ -18,12 +17,12 @@ module.exports = function(grunt) {
         watch: fileWatchTask,
         less: lessTask,
         server: expressTask,
-        concat: concatTask,
+        concat: concatTask
 
     });
 
 
-    var port = 35002;
+    var port = 58008;
     grunt.registerTask('server', 'starts the express server', function(){
         expressTask.listen(port, function() {
             console.log('Express server listening on ' + port);
@@ -43,5 +42,3 @@ module.exports = function(grunt) {
     grunt.registerTask('nostart',['jshint','clean:all','concat','copy','less' ]);
     grunt.registerTask('default',['nostart','server', 'watch']);
 };
-
-
