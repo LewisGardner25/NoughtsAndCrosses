@@ -3,8 +3,8 @@
  */
 module.exports = {
     src: {
-        cwd: '',
-        src: '.less',
+        cwd: 'main-app/app/less/',
+        src: '*.less',
         dest: '.build/main-app/app/css',
         expand: true,
         ext: '.min.css'
