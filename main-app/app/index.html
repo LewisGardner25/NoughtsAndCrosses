@@ -12,12 +12,16 @@
     <h1>{{gameModel.gameboard}}</h1>
     <button ng-click="newGame()">New Game</button>
 
-    <div id="playerTypes">
-        <button>Player 1</button>
-            <p>{{gameModel.player1}}</p>
-        <button>Player 2</button>
-            <p>{{gameModel.player2}}</p>
+    <div>
+        <button ng-click="changePlayer1()">Player 1</button>
+        <p style="display: inline">{{gameModel.player1}}</p>
     </div>
+
+    <div>
+        <button ng-click="changePlayer2()">Player 2</button>
+        <p style="display: inline">{{gameModel.player2}}</p>
+    </div>
+
 <script src="scripts/built.js"></script>
 </body>
 </html>
