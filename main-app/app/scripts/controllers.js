@@ -8,7 +8,7 @@ noughtsAndCrossesApp.controller('noughtsAndCrossesController',function ($scope,g
         gameApi.newGame();
     };
 
-    $scope.switchPlayer1 = function(){
+   $scope.switchPlayer1 = function(){
         playerServices.switchPlayer1();
     };
 
