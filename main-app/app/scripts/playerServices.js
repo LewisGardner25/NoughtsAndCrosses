@@ -7,7 +7,7 @@ noughtsAndCrossesApp.service('playerServices', function(gameModel){
         if(nextPlayerType === 'human'){
             return 'pre-trained';
         }
-        return 'random'
+        return 'random';
     };
 
     this.switchPlayer1 = function(nextPlayerType){
@@ -16,6 +16,6 @@ noughtsAndCrossesApp.service('playerServices', function(gameModel){
 
     this.switchPlayer2 = function(nextPlayerType){
         gameModel.player2 = nextPlayerType;
-    }
+    };
 
 });
