@@ -17,6 +17,4 @@ noughtsAndCrossesApp.service('gameApi',function (gameModel,$http){
         {'player1': gameModel.player1,'player2': gameModel.player2});
     };
 
-    
-
 });
