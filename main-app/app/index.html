@@ -11,6 +11,8 @@
 
     <h1>{{gameModel.gameboard}}</h1>
     <button ng-click="newGame()">New Game</button>
+    <button ng-click="makeMove()">Make Move</button>
+
 
     <div>
         <button ng-click="switchPlayer1()">Player 1</button>
@@ -21,6 +23,7 @@
         <button ng-click="switchPlayer2()">Player 2</button>
         <p style="display: inline">{{gameModel.player2}}</p>
     </div>
+
 
 <script src="scripts/built.js"></script>
 </body>

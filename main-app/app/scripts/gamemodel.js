@@ -1,12 +1,12 @@
 noughtsAndCrossesApp.service('gameModel', function(){
 
-    return{
-        gameboard: '000000000',
-        winner: 0,
-        player1: 'random',
-        player2: 'random',
-        outcome: 'continue',
-        currentPlayer: 1
-        };
-
+    var gameModel = function(){
+        this.gameboard = '000000000';
+        this.winner = 0;
+        this.player1 = 'random';
+        this.player2 = 'random';
+        this.outcome = 'continue';
+        this.currentPlayer = 1;
+    };
+    return new gameModel();
 });
