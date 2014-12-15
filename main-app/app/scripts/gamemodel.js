@@ -18,12 +18,12 @@ noughtsAndCrossesApp.service('gameModel', function(){
             return 'random';
         };
 
-        this.switchPlayer1 = function(currentPlayer){
+        this.switchPlayer1 = function(){
             var me = this;
             me.player1 = nextPlayerType(me.player1);
         };
 
-        this.switchPlayer2 = function(  ){
+        this.switchPlayer2 = function(){
             var me = this;
             this.player2 = nextPlayerType(me.player2);
         };
