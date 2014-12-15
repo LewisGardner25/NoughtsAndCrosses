@@ -3,20 +3,31 @@ noughtsAndCrossesApp.service('gameModel', function(){
     var gameModel = function(){
         this.gameboard = '000000000';
         this.winner = 0;
-        this.player1 = 'random';
-        this.player2 = 'random';
+        this.player1 = 'human';
+        this.player2 = 'human';
         this.outcome = 'continue';
         this.currentPlayer = 1;
 
         var nextPlayerType = function (currentPlayer){
-            if(currentPlayer === 'random'){
-                return 'human';
-            }
             if(currentPlayer === 'human'){
+                return 'random';
+            }
+            if(currentPlayer === 'random'){
                 return 'pre-trained';
             }
-            return 'random';
+            return 'human';
         };
+
+        this.playerSwitch = function(){
+            if(currentPlayer === 1){
+                return currentPlayer === 2;
+            }
+            return currentPlayer === 1;
+        };
+
+        /* this.humanPlayerSwitch = function(){
+              if(currentPlayer === 'human')
+        }; */
 
         this.switchPlayer1 = function(){
             var me = this;
