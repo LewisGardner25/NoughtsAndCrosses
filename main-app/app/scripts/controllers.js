@@ -9,7 +9,7 @@ noughtsAndCrossesApp.controller('noughtsAndCrossesController',function ($scope,g
 
     $scope.makeMove = function(squareNumber){
         gameApi.makeMove(squareNumber);
-
+        gameModel.toggleCurrentPlayer();
     };
 
    $scope.switchPlayer1 = function(){
