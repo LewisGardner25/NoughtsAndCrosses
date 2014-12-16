@@ -18,12 +18,7 @@ noughtsAndCrossesApp.service('gameModel', function(){
             return 'human';
         };
 
-        this.playerSwitch = function(){
-            if(currentPlayer === 1){
-                return currentPlayer === 2;
-            }
-            return currentPlayer === 1;
-        };
+        
 
         this.switchPlayer1 = function(){
             var me = this;
