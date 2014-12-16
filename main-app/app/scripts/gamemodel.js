@@ -1,12 +1,34 @@
 noughtsAndCrossesApp.service('gameModel', function(){
 
-    return{
-        gameboard: '000000000',
-        winner: 0,
-        player1: 'random',
-        player2: 'random',
-        outcome: 'continue',
-        currentPlayer: 1
+    var gameModel = function(){
+        this.gameboard = '000000000';
+        this.winner = 0;
+        this.player1 = 'human';
+        this.player2 = 'human';
+        this.outcome = 'continue';
+        this.currentPlayer = 1;
+
+        var nextPlayerType = function (currentPlayer){
+            if(currentPlayer === 'human'){
+                return 'random';
+            }
+            if(currentPlayer === 'random'){
+                return 'pre-trained';
+            }
+            return 'human';
         };
 
+        
+
+        this.switchPlayer1 = function(){
+            var me = this;
+            me.player1 = nextPlayerType(me.player1);
+        };
+
+        this.switchPlayer2 = function(){
+            var me = this;
+            this.player2 = nextPlayerType(me.player2);
+        };
+    };
+    return new gameModel();
 });
