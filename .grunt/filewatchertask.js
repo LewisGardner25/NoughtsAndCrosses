@@ -18,14 +18,14 @@ module.exports = {
     },
     grunt: {
         files: '.grunt/*.js',
-        tasks: ['clean:images','copy:images'],
+        tasks: ['nostart'],
         options: {
             spawn: false
         }
     },
     less: {
         files: 'main-app/app/less/*.*',
-        tasks: ['clean:html','copy:html'],
+        tasks: ['less'],
         options: {
             spawn: false
         }
