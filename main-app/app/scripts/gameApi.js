@@ -24,8 +24,6 @@ noughtsAndCrossesApp.service('gameApi',function ($http,gameModel){
         gameModel.gameboard = 'gamemodel';
     };
 
-
-
     this.newGame = function(){
         return serverCall('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/newgame',
         {
@@ -41,7 +39,5 @@ noughtsAndCrossesApp.service('gameApi',function ($http,gameModel){
         'chosenSquare': squareNumber
         });
     };
-
-
 
 });

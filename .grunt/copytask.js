@@ -8,10 +8,11 @@ module.exports = {
         dest: '.build/',
         expand: true
     },
+
     html: {
         cwd: '',
         src: 'main-app/app/index.html',
-        dest: '.build/',
+        dest: '.build',
         expand: true
     },
     angular: {
