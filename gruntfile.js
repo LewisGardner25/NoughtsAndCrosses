@@ -39,6 +39,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
 
 
-    grunt.registerTask('nostart',['jshint','clean:all','concat','copy','less' ]);
+    grunt.registerTask('nostart',['jshint','clean','concat','copy','less' ]);
     grunt.registerTask('default',['nostart','server', 'watch']);
 };

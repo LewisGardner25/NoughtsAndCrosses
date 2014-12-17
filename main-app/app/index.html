@@ -12,35 +12,38 @@
     <h1>{{gameModel.gameboard}}</h1>
     <h1>{{gameModel.outcome}}</h1>
     <h1>The Winner is Player {{gameModel.winner}}</h1>
+
     <button ng-click="newGame()">New Game</button>
 
     <table>
         <tr>
-            <td><img src="" id="0" ng-click="makeMove(0)"></td>
-            <td><img src="" id="1" ng-click="makeMove(1)"></td>
-            <td><img src="" id="2" ng-click="makeMove(2)"></td>
+            <td ng-click="makeMove(0)"><img src="images/cross.jpeg"></td>
+            <td ng-click="makeMove(1)"><img src="images/nought.jpeg"></td>
+            <td ng-click="makeMove(2)"><img src=""></td>
        </tr>
         <tr>
-            <td><img src="" id="3" ng-click="makeMove(3)"></td>
-            <td><img src="" id="4" ng-click="makeMove(4)"></td>
-            <td><img src="" id="5" ng-click="makeMove(5)"></td>
+            <td ng-click="makeMove(3)"><img src=""></td>
+            <td ng-click="makeMove(4)"><img src=""></td>
+            <td ng-click="makeMove(5)"><img src=""></td>
         </tr>
         <tr>
-            <td><img src="" id="6" ng-click="makeMove(6)"></td>
-            <td><img src="" id="7" ng-click="makeMove(7)"></td>
-            <td><img src="" id="8" ng-click="makeMove(8)"></td>
+            <td ng-click="makeMove(6)"><img src=""></td>
+            <td ng-click="makeMove(7)"><img src=""></td>
+            <td ng-click="makeMove(8)"><img src=""></td>
         </tr>
     </table>
 
     <div>
         <button ng-click="switchPlayer1()">Player 1</button>
-        <p style="display: inline">{{gameModel.player1}}</p>
+        <p>{{gameModel.player1}}</p>
     </div>
 
     <div>
         <button ng-click="switchPlayer2()">Player 2</button>
-        <p style="display: inline">{{gameModel.player2}}</p>
+        <p>{{gameModel.player2}}</p>
     </div>
+
+
 
 
 <script src="scripts/built.js"></script>
