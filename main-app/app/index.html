@@ -17,19 +17,19 @@
 
     <table>
         <tr>
-            <td ng-click="makeMove(0)"><img src="images/cross.jpeg"></td>
-            <td ng-click="makeMove(1)"><img src="images/nought.jpeg"></td>
-            <td ng-click="makeMove(2)"><img src=""></td>
-       </tr>
-        <tr>
-            <td ng-click="makeMove(3)"><img src=""></td>
-            <td ng-click="makeMove(4)"><img src=""></td>
-            <td ng-click="makeMove(5)"><img src=""></td>
+            <td ng-click="makeMove(0)" class="gameSquare playerImage{{gameModel.gameboard[0]}}"></td>
+            <td ng-click="makeMove(1)" class="gameSquare PlayerImage{{gameModel.gameboard[1]}}"></td>
+            <td ng-click="makeMove(2)" class="gameSquare PlayerImage{{gameModel.gameboard[2]}}"></td>
         </tr>
         <tr>
-            <td ng-click="makeMove(6)"><img src=""></td>
-            <td ng-click="makeMove(7)"><img src=""></td>
-            <td ng-click="makeMove(8)"><img src=""></td>
+            <td ng-click="makeMove(3)" class="gameSquare playerImage{{gameModel.gameboard[3]}}"></td>
+            <td ng-click="makeMove(4)" class="gameSquare playerImage{{gameModel.gameboard[4]}}"></td>
+            <td ng-click="makeMove(5)" class="gameSquare playerImage{{gameModel.gameboard[5]}}"></td>
+        </tr>
+        <tr>
+            <td ng-click="makeMove(6)" class="gameSquare playerImage{{gameModel.gameboard[6]}}"></td>
+            <td ng-click="makeMove(7)" class="gameSquare playerImage{{gameModel.gameboard[7]}}"></td>
+            <td ng-click="makeMove(8)" class="gameSquare playerImage{{gameModel.gameboard[8]}}"></td>
         </tr>
     </table>
 

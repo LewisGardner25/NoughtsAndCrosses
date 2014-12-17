@@ -1,6 +1,18 @@
 table tr td {
   border: 1px solid;
   border-color: #700b0b;
+}
+
+.gameSquare {
+  background:url(/images/favicon.jpeg);
+  background-position: 0, 0;
+  background-size: 600px, 150px;
   width: 150px;
   height: 150px;
+    &.playerImage1 {
+      background-position: -225px, 0;
+    }
+    &.playerImage2 {
+      background-position: -425px, 0;
+   }
 }
