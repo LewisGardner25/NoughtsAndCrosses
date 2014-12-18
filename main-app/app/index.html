@@ -8,44 +8,55 @@
 
 </head>
 <body ng-controller="noughtsAndCrossesController">
+<div id="pageContainer">
 
-    <h1>{{gameModel.gameboard}}</h1>
-    <h1>{{gameModel.outcome}}</h1>
-    <h1>The Winner is Player {{gameModel.winner}}</h1>
+    <header>
+        <h1>Reece vs. Mark</h1>
+    </header>
 
-    <button ng-click="newGame()">New Game</button>
-
-    <table>
-        <tr>
-            <td ng-click="makeMove(0)" class="gameSquare playerImage{{gameModel.gameboard[0]}}"></td>
-            <td ng-click="makeMove(1)" class="gameSquare playerImage{{gameModel.gameboard[1]}}"></td>
-            <td ng-click="makeMove(2)" class="gameSquare playerImage{{gameModel.gameboard[2]}}"></td>
-        </tr>
-        <tr>
-            <td ng-click="makeMove(3)" class="gameSquare playerImage{{gameModel.gameboard[3]}}"></td>
-            <td ng-click="makeMove(4)" class="gameSquare playerImage{{gameModel.gameboard[4]}}"></td>
-            <td ng-click="makeMove(5)" class="gameSquare playerImage{{gameModel.gameboard[5]}}"></td>
-        </tr>
-        <tr>
-            <td ng-click="makeMove(6)" class="gameSquare playerImage{{gameModel.gameboard[6]}}"></td>
-            <td ng-click="makeMove(7)" class="gameSquare playerImage{{gameModel.gameboard[7]}}"></td>
-            <td ng-click="makeMove(8)" class="gameSquare playerImage{{gameModel.gameboard[8]}}"></td>
-        </tr>
-    </table>
-
-    <div>
-        <button ng-click="switchPlayer1()">Player 1</button>
-        <p>{{gameModel.player1}}</p>
-    </div>
-
-    <div>
-        <button ng-click="switchPlayer2()">Player 2</button>
-        <p>{{gameModel.player2}}</p>
-    </div>
+    <main>
+        <table>
+            <tr>
+                <td ng-click="makeMove(0)" class="gameSquare playerImage{{gameModel.gameboard[0]}}"></td>
+                <td ng-click="makeMove(1)" class="gameSquare playerImage{{gameModel.gameboard[1]}}"></td>
+                <td ng-click="makeMove(2)" class="gameSquare playerImage{{gameModel.gameboard[2]}}"></td>
+            </tr>
+            <tr>
+                <td ng-click="makeMove(3)" class="gameSquare playerImage{{gameModel.gameboard[3]}}"></td>
+                <td ng-click="makeMove(4)" class="gameSquare playerImage{{gameModel.gameboard[4]}}"></td>
+                <td ng-click="makeMove(5)" class="gameSquare playerImage{{gameModel.gameboard[5]}}"></td>
+            </tr>
+            <tr>
+                <td ng-click="makeMove(6)" class="gameSquare playerImage{{gameModel.gameboard[6]}}"></td>
+                <td ng-click="makeMove(7)" class="gameSquare playerImage{{gameModel.gameboard[7]}}"></td>
+                <td ng-click="makeMove(8)" class="gameSquare playerImage{{gameModel.gameboard[8]}}"></td>
+            </tr>
+        </table>
+    </main>
 
 
+    <aside>
+        <div class="playerControls">
+            <button class="newGame" ng-click="newGame()">New Game</button>
+
+            <div class="playerSwitch1">
+                <button ng-click="switchPlayer1()">Player 1</button>
+                <p>{{gameModel.player1}}</p>
+            </div>
+
+            <div class="playerSwitch2">
+                <button ng-click="switchPlayer2()">Player 2</button>
+                <p>{{gameModel.player2}}</p>
+            </div>
+
+            <h3>The Winner is:</h3>
+            <h4>Player {{gameModel.winner}}</h4>
+
+        </div>
+    </aside>
 
 
+</div>
 <script src="scripts/built.js"></script>
 </body>
 </html>
