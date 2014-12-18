@@ -44,16 +44,12 @@
                 <p>{{gameModel.player1}}</p>
             </div>
 
-            <div class="playerSwitch2">
-                <button ng-click="switchPlayer2()">Player 2</button>
-                <p>{{gameModel.player2}}</p>
-            </div>
-
             <div class="playerSwitcherTable">
                 <table>
                     <tr>
                         <td ng-click="switchPlayer1()" class="playerChange1 playerTypeImage{{gameModel.player1}}"></td>
                     </tr>
+
                     <tr>
                         <td ng-click="switchPlayer2()" class="playerChange2 playerTypeImage{{gameModel.player2}}"></td>
                     </tr>
