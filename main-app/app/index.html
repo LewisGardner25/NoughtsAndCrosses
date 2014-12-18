@@ -49,6 +49,14 @@
                 <p>{{gameModel.player2}}</p>
             </div>
 
+            <div>
+                <table>
+                    <tr class="playerSwitch2">
+                        <td ng-click="switchPlayer2()" class="playerChange playerTypeImage{{gameModel.player2}}"></td>
+                    </tr>
+                </table>
+            </div>
+
             <h3>The Winner is:</h3>
             <h4>Player {{gameModel.winner}}</h4>
 

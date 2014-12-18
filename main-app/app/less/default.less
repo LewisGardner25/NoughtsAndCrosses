@@ -21,7 +21,7 @@ aside {
   vertical-align:top;
   display:inline-block;
   width:190px;
-  height:115px;
+  height:500px;
   background-color:#cd5c5c;
   margin-top:3px;
   h3 {
@@ -70,8 +70,6 @@ header {
   }
 }
 
-
-
 .gameSquare {
   background:url(/images/favicon.jpg);
   background-size: 600px, 150px;
@@ -84,5 +82,20 @@ header {
     background-position: -410px, 0;
   }
 }
+
+.playerChange {
+  background:url(/images/markPlayerSprite.png);
+  background-size: 570px, 150px;
+  background-position: -45px, 0px;
+  width: 150px;
+  height: 150px;
+  &.playerTypeImagerandom{
+    background-position: -227px, 0;
+  }
+  &.playerTypeImagepre-trained{
+    background-position: -412px, 0;
+  }
+}
+
 
 
