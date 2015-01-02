@@ -39,14 +39,16 @@
         <div class="playerControls">
             <button class="newGame" ng-click="newGame()">New Game</button>
 
-            <div class="playerSwitch1">
-                <button ng-click="switchPlayer1()">Player 1</button>
-                <p>{{gameModel.player1}}</p>
-            </div>
+            <div class="playerSwitcherTable">
+                <table>
+                    <tr>
+                        <td ng-click="switchPlayer1()" class="playerChange1 playerTypeImage{{gameModel.player1}}"></td>
+                    </tr>
 
-            <div class="playerSwitch2">
-                <button ng-click="switchPlayer2()">Player 2</button>
-                <p>{{gameModel.player2}}</p>
+                    <tr>
+                        <td ng-click="switchPlayer2()" class="playerChange2 playerTypeImage{{gameModel.player2}}"></td>
+                    </tr>
+                </table>
             </div>
 
             <h3>The Winner is:</h3>
