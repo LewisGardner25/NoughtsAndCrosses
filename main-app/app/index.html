@@ -34,17 +34,15 @@
         </table>
     </main>
 
-
     <aside>
         <div class="playerControls">
-            <button class="newGame" ng-click="newGame()">New Game</button>
+            <img class="newGameButton" src="images/newGame.png" alt="New Game" ng-click="newGame()">
 
             <div class="playerSwitcherTable">
                 <table>
                     <tr>
                         <td ng-click="switchPlayer1()" class="playerChange1 playerTypeImage{{gameModel.player1}}"></td>
                     </tr>
-
                     <tr>
                         <td ng-click="switchPlayer2()" class="playerChange2 playerTypeImage{{gameModel.player2}}"></td>
                     </tr>

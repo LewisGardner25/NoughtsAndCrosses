@@ -15,7 +15,7 @@ noughtsAndCrossesApp.service('gameModel', function(){
             if(currentPlayer === 'random'){
                 return 'pre-trained';
             }
-            return 'human';
+           return 'human';
         };
 
         this.toggleCurrentPlayer = function(){
