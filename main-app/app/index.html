@@ -10,8 +10,10 @@
 <body ng-controller="noughtsAndCrossesController">
 <div id="pageContainer">
 
+
     <header>
         <h1>Reece vs. Mark</h1>
+        <p>{{gameModel.currentPlayer}}</p>
     </header>
 
     <main>
@@ -36,9 +38,9 @@
 
     <aside>
         <div class="playerControls">
-            <img class="newGameButton" src="images/newGame.png" alt="New Game" ng-click="newGame()">
+            <img  class="newGameButton" src="images/newGame.png" alt="New Game" ng-click="newGame()">
 
-            <div class="playerSwitcherTable">
+            <div class="playerSwitchTable">
                 <table>
                     <tr>
                         <td ng-click="switchPlayer1()" class="playerChange1 playerTypeImage{{gameModel.player1}}"></td>
@@ -49,8 +51,7 @@
                 </table>
             </div>
 
-            <h3>The Winner is:</h3>
-            <h4>Player {{gameModel.winner}}</h4>
+            <h4>The Winner is: Player {{gameModel.winner}}</h4>
 
         </div>
     </aside>
