@@ -41,14 +41,12 @@
             <img  class="newGameButton" src="images/newGame.png" alt="New Game" ng-click="newGame()">
 
             <div class="playerSwitchTable">
-                <table>
-                    <tr>
-                        <td ng-click="switchPlayer1()" class="playerChange1 playerTypeImage{{gameModel.player1}}"></td>
-                    </tr>
-                    <tr>
-                        <td ng-click="switchPlayer2()" class="playerChange2 playerTypeImage{{gameModel.player2}}"></td>
-                    </tr>
-                </table>
+                <div>
+                    <img ng-click="switchPlayer1()" class="playerChange1 playerTypeImage{{gameModel.player1}}">
+                </div>
+                <div>
+                    <img ng-click="switchPlayer2()" class="playerChange2 playerTypeImage{{gameModel.player2}}">
+                </div>
             </div>
 
             <h4>The Winner is: Player {{gameModel.winner}}</h4>
