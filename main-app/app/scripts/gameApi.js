@@ -1,4 +1,4 @@
-noughtsAndCrossesApp.service('gameApi',function ($http,gameModel){
+noughtsAndCrossesApp.service('gameApi',function ($http,$q,gameModel){
 
     var serverCall = function (url, data) {
         var serverPost = {
@@ -21,7 +21,7 @@ noughtsAndCrossesApp.service('gameApi',function ($http,gameModel){
                 console.log(data);
                 console.log(status);
             });
-        gameModel.gameboard = 'gamemodel';
+        return gameModel.gameboard === 'gamemodel';
     };
 
     this.newGame = function(){
@@ -39,5 +39,6 @@ noughtsAndCrossesApp.service('gameApi',function ($http,gameModel){
         'chosenSquare': squareNumber
         });
     };
+
 
 });

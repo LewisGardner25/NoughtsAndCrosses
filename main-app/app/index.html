@@ -9,11 +9,10 @@
 </head>
 <body ng-controller="noughtsAndCrossesController">
 <div id="pageContainer">
-
     <header>
         <h1>Reece vs. Mark</h1>
+        <p>{{gameModel.currentPlayer}}</p>
     </header>
-
     <main>
         <table>
             <tr>
@@ -33,31 +32,20 @@
             </tr>
         </table>
     </main>
-
-
     <aside>
         <div class="playerControls">
-            <button class="newGame" ng-click="newGame()">New Game</button>
-
-            <div class="playerSwitcherTable">
-                <table>
-                    <tr>
-                        <td ng-click="switchPlayer1()" class="playerChange1 playerTypeImage{{gameModel.player1}}"></td>
-                    </tr>
-
-                    <tr>
-                        <td ng-click="switchPlayer2()" class="playerChange2 playerTypeImage{{gameModel.player2}}"></td>
-                    </tr>
-                </table>
-            </div>
-
-            <h3>The Winner is:</h3>
-            <h4>Player {{gameModel.winner}}</h4>
-
+            <img  class="newGameButton" src="images/newGame.png" alt="New Game" ng-click="newGame()">
+                <div class="playerSwitchTable">
+                    <div>
+                        <img ng-click="switchPlayer1()" class="playerChange1 playerTypeImage{{gameModel.player1}}">
+                    </div>
+                    <div>
+                        <img ng-click="switchPlayer2()" class="playerChange2 playerTypeImage{{gameModel.player2}}">
+                    </div>
+                </div>
+            <h4>The Winner is: Player {{gameModel.winner}}</h4>
         </div>
     </aside>
-
-
 </div>
 <script src="scripts/built.js"></script>
 </body>
