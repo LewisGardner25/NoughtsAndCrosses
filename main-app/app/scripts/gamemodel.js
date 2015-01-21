@@ -18,7 +18,9 @@ noughtsAndCrossesApp.service('gameModel', function(){
             return 'human';
         };
 
-            this.toggleCurrentPlayer = function(){
+
+
+        this.toggleCurrentPlayer = function(){
             if(this.player1 !== 'human'){
                 return;
             }
@@ -37,7 +39,16 @@ noughtsAndCrossesApp.service('gameModel', function(){
             var me = this;
             this.player2 = nextPlayerType(me.player2);
         };
+
+        this.resetCurrentPlayer = function(){
+            var me = this;
+            if(me.player1 === 'human'){
+                me.currentPlayer = 1;
+            }
+            if(me.player1 !== 'human' && me.player2 === 'human'){
+                me.currentPlayer = 2;
+            }
+        };
     };
     return new gameModel();
-
 });
