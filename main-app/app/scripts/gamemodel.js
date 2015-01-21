@@ -7,6 +7,7 @@ noughtsAndCrossesApp.service('gameModel', function(){
         this.player2 = 'human';
         this.outcome = 'continue';
         this.currentPlayer = 1;
+        this.winnerName = 'No One';
 
         var nextPlayerType = function(currentPlayer){
             if(currentPlayer === 'human'){
@@ -18,7 +19,19 @@ noughtsAndCrossesApp.service('gameModel', function(){
             return 'human';
         };
 
-
+        this.displayWinnerMessage = function(){
+            var me = this;
+            if(me.winner === 0){
+                me.winnerName = 'No One';
+            }
+            if(me.winner === '1'){
+                me.winnerName = 'Reece';
+            }
+            if(me.winner === '2'){
+                me.winnerName = 'Mark';
+            }
+            return me.winnerName;
+        };
 
         this.toggleCurrentPlayer = function(){
             if(this.player1 !== 'human'){
@@ -51,4 +64,5 @@ noughtsAndCrossesApp.service('gameModel', function(){
         };
     };
     return new gameModel();
+
 });
