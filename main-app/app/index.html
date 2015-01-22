@@ -11,7 +11,8 @@
 <div id="pageContainer">
     <header>
         <h1>Reece vs. Mark</h1>
-        <p>{{gameModel.currentPlayer}}</p>
+        <p>{{gameModel.winnerName}} Wins <button ng-click="findWinner()">Find Winner</button></p>
+
     </header>
     <main>
         <table>
@@ -37,13 +38,12 @@
             <img  class="newGameButton" src="images/newGame.png" alt="New Game" ng-click="newGame()">
                 <div class="playerSwitchTable">
                     <div>
-                        <img ng-click="switchPlayer1()" class="playerChange1 playerTypeImage{{gameModel.player1}}">
+                        <img src="" ng-click="switchPlayer1()" class="playerChange1 playerTypeImage{{gameModel.player1}}">
                     </div>
                     <div>
-                        <img ng-click="switchPlayer2()" class="playerChange2 playerTypeImage{{gameModel.player2}}">
+                        <img src="" ng-click="switchPlayer2()" class="playerChange2 playerTypeImage{{gameModel.player2}}">
                     </div>
                 </div>
-            <h4>The Winner is: Player {{gameModel.winner}}</h4>
         </div>
     </aside>
 </div>

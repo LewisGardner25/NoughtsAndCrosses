@@ -21,4 +21,8 @@ noughtsAndCrossesApp.controller('noughtsAndCrossesController',function ($scope,g
         gameModel.switchPlayer2();
     };
 
+    $scope.findWinner = function(){
+        gameModel.displayWinnerMessage();
+    };
+
 });
