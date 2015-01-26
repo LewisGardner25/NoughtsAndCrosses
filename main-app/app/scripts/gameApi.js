@@ -10,18 +10,35 @@ noughtsAndCrossesApp.service('gameApi',function ($http,$q,gameModel){
                 'content-type': 'application/json'
             }};
 
+
         $http(serverPost)
             .success(function(data){
+                var me = this;
                 gameModel.gameboard = data.gameboard;
                 gameModel.winner = data.winner;
                 gameModel.outcome = data.outcome;
+                me.promise = function(){
+                    gameModel.displayWinnerMessage()
+                        .then(function(data){
+                            if(data.gameModel.displayWinnerMessage === true){
+                                console.log('found data');
+                                gameModel.displayWinnerMessage();
+                            }
+                            else{
+                                console.log('Winner Not Found');
+                            }
+                        },
+                            function(error){
+                                console.log('error', error);
+                        }
+                    );
+                };
             })
             .error(function(data, status) {
                 console.log('Error');
                 console.log(data);
                 console.log(status);
             });
-        return gameModel.gameboard === 'gamemodel';
     };
 
     this.newGame = function(){
@@ -29,7 +46,7 @@ noughtsAndCrossesApp.service('gameApi',function ($http,$q,gameModel){
         {
         'player1': gameModel.player1,
         'player2': gameModel.player2,
-        'currentPlayer': gameModel.currentPlayer
+        'currentPlayer': gameModel.currentPlayer,
         });
     };
 
@@ -37,7 +54,7 @@ noughtsAndCrossesApp.service('gameApi',function ($http,$q,gameModel){
         serverCall('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/makemove',
         {
         'playerNumber': gameModel.currentPlayer,
-        'chosenSquare': squareNumber
+        'chosenSquare': squareNumber,
         });
     };
 
