@@ -1,4 +1,4 @@
-noughtsAndCrossesApp.controller('noughtsAndCrossesController',function ($scope,gameModel,gameApi){
+noughtsAndCrossesApp.controller('noughtsAndCrossesController',function ($scope,$http,gameModel,gameApi,promise){
 
     $scope.gameModel = gameModel;
     $scope.gameApi = gameApi;
@@ -22,7 +22,23 @@ noughtsAndCrossesApp.controller('noughtsAndCrossesController',function ($scope,g
     };
 
     $scope.findWinner = function(){
-        gameModel.displayWinnerMessage();
+        promise.gameApiPromise();
+    };
+
+    return{
+        gameApiPromise: function(){
+            var playerPromise = gameModel.$http.promise;
+            console.log('calling');
+            return playerPromise
+                .then(function(){
+                    if(gameModel.displayWinnerMessage === true){
+                        return new gameModel();
+                    }
+                    else{
+                        return $q.reject(playerPromise);
+                    }
+                });
+        }
     };
 
 });

@@ -21,7 +21,6 @@ noughtsAndCrossesApp.service('gameModel', function(){
 
         this.displayWinnerMessage = function(){
             var me = this;
-            console.log('calling');
             if(me.winner === 0){
                 me.winnerName = 'No One';
             }
@@ -31,7 +30,6 @@ noughtsAndCrossesApp.service('gameModel', function(){
             if(me.winner === '2'){
                 me.winnerName = 'Mark';
             }
-            console.log('called');
             return me.winnerName;
         };
 
@@ -66,5 +64,4 @@ noughtsAndCrossesApp.service('gameModel', function(){
         };
     };
     return new gameModel();
-
 });
