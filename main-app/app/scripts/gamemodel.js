@@ -9,6 +9,12 @@ noughtsAndCrossesApp.service('gameModel', function(){
         this.currentPlayer = 1;
         this.winnerName = 'No One';
 
+
+        this.isNewGame = function(){
+            var me = this;
+            return me.gameboard !=='000000000';
+        };
+
         var nextPlayerType = function(currentPlayer){
             if(currentPlayer === 'human'){
                 return 'random';
@@ -57,8 +63,9 @@ noughtsAndCrossesApp.service('gameModel', function(){
             var me = this;
             if(me.player1 === 'human'){
                 me.currentPlayer = 1;
+                return;
             }
-            if(me.player1 !== 'human' && me.player2 === 'human'){
+            if(me.player2 === 'human'){
                 me.currentPlayer = 2;
             }
         };
