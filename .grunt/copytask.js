@@ -8,6 +8,12 @@ module.exports = {
         dest: '.build/',
         expand: true
     },
+    sound: {
+        cwd:'',
+        src:'main-app/app/sound/*.mp3',
+        dest: '.build/',
+        expand: true
+    },
 
     html: {
         cwd: '',
