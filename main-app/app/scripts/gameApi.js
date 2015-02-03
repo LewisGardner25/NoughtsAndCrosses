@@ -1,6 +1,7 @@
-noughtsAndCrossesApp.service('gameApi',function ($http,$q,gameModel){
+noughtsAndCrossesApp.service('gameApi',function ($http, $q){
 
     var serverCall = function (url, data) {
+        var deferred = $q.defer();
         var serverPost = {
             method: 'POST',
             url: url,
@@ -10,33 +11,33 @@ noughtsAndCrossesApp.service('gameApi',function ($http,$q,gameModel){
                 'content-type': 'application/json'
             }};
 
+
         $http(serverPost)
             .success(function(data){
-                gameModel.gameboard = data.gameboard;
-                gameModel.winner = data.winner;
-                gameModel.outcome = data.outcome;
+                deferred.resolve(data);
             })
             .error(function(data, status) {
+                deferred.reject({httpStatus: status, message: data});
                 console.log('Error');
                 console.log(data);
                 console.log(status);
             });
-        return gameModel.gameboard === 'gamemodel';
+        return deferred.promise;
     };
 
-    this.newGame = function(){
+
+    this.newGame = function(player1Type, player2Type){
         return serverCall('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/newgame',
         {
-        'player1': gameModel.player1,
-        'player2': gameModel.player2,
-        'currentPlayer': gameModel.currentPlayer
+        'player1': player1Type,
+        'player2': player2Type,
         });
     };
 
-    this.makeMove = function(squareNumber){
-        serverCall('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/makemove',
+    this.makeMove = function(currentPlayer, squareNumber){
+        return serverCall('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/makemove',
         {
-        'playerNumber': gameModel.currentPlayer,
+        'playerNumber': currentPlayer,
         'chosenSquare': squareNumber
         });
     };
