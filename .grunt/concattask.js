@@ -8,6 +8,7 @@ module.exports = {
             'main-app/app/scripts/app.js',
             'main-app/app/scripts/gameApi.js',
             'main-app/app/scripts/gamemodel.js',
+            'main-app/app/scripts/audio.js',
             'main-app/app/scripts/controllers.js'
             ],
         dest: '.build/main-app/app/scripts/built.js'
