@@ -11,8 +11,9 @@
 <div id="pageContainer">
     <header>
         <h1>Reece vs. Mark</h1>
-        <p>{{gameModel.winnerName}} <button ng-click="findWinner()">Find Winner</button></p>
-
+        <audio>
+            <source src="sound/alert_tone.mp3" type="audio/mp3" id="alertTone">
+        </audio>
     </header>
     <main>
         <table>
@@ -43,6 +44,7 @@
                     <div>
                         <img src="" ng-click="switchPlayer2()" class="playerChange2 playerTypeImage{{gameModel.player2}}">
                     </div>
+                    <button ng-click="playSprite(alertTone)">Sound Sprite</button>
                 </div>
         </div>
     </aside>

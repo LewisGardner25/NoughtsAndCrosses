@@ -9,7 +9,6 @@ noughtsAndCrossesApp.service('gameModel', function(){
         this.currentPlayer = 1;
         this.winnerName = 'No One';
 
-
         this.isNewGame = function(){
             var me = this;
             return me.gameboard !=='000000000';

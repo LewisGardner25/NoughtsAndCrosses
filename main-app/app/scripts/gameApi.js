@@ -10,8 +10,6 @@ noughtsAndCrossesApp.service('gameApi',function ($http, $q){
             headers: {
                 'content-type': 'application/json'
             }};
-
-
         $http(serverPost)
             .success(function(data){
                 deferred.resolve(data);
