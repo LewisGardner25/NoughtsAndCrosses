@@ -17,7 +17,7 @@ noughtsAndCrossesApp.service('audioService', function($document){
         }
     };
 
-    /*this.audioSprite.addEventListener('timeupdate',this.updateTime, false);*/
+    this.audioSprite.addEventListener('timeupdate',this.updateTime, false);
 
     this.playSprite = function(){
         if(this.spriteData && this.spriteData.length){
