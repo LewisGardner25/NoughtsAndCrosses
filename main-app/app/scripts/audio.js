@@ -1,31 +1,45 @@
-noughtsAndCrossesApp.service('audioService', function($document){
+noughtsAndCrossesApp.service('audioService', function($document,$timeout){
 
-    this.audioSprite = $document.getElementById = 'alertTone';
+    var me = this;
+    var audioSprite;
 
-    this.spriteData = {
-        alert: {
-            start: 0.1,
-            length: 1.0
+    var spriteData = {
+        newGameData: {
+            start: 0,
+            length: 2
+        },
+        makeMoveData: {
+            start: 4,
+            length: 0.5
         }
     };
 
-    this.currentSprite = {};
-
-    this.updateTime = function(){
-        if(this.currentTime >= this.currentSprite.start + this.currentSprite.length){
-            this.pause();
-        }
+    var createSpriteElement = function(){
+        var document = $document[0];
+        audioSprite = document.createElement('audio');
+        var source = document.createElement('source');
+        audioSprite.appendChild(source);
+        source.src = 'sound/sprites.mp3';
+        source.type = 'audio/mp3';
+        document.body.appendChild(audioSprite);
     };
 
-    this.audioSprite.addEventListener('timeupdate',this.updateTime, false);
-
-    this.playSprite = function(){
-        if(this.spriteData && this.spriteData.length){
-            console.log('sound output');
-            this.currentSprite = this.spriteData;
-            this.audioSprite.currentTime = this.spriteData.start;
-            audioSprite.play();
-        }
+    var playAudioSprite = function(spriteInformation){
+        audioSprite.currentTime = spriteInformation.start;
+        audioSprite.play();
+        $timeout(function(){
+            audioSprite.pause();
+        }, spriteInformation.length * 1000);
     };
+
+    me.newGameAudioSprite = function(){
+        playAudioSprite(spriteData.newGameData);
+    };
+
+    me.makeMoveAudioSprite = function(){
+        playAudioSprite(spriteData.makeMoveData);
+    };
+
+    createSpriteElement();
 
 });

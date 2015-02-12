@@ -7,11 +7,12 @@ noughtsAndCrossesApp.controller('noughtsAndCrossesController',function ($scope,g
     $scope.newGame = function(){
         gameModel.resetCurrentPlayer();
         updateGameBoard(gameApi.newGame($scope.gameModel.player1, $scope.gameModel.player2));
+        audioService.newGameAudioSprite();
     };
 
     $scope.makeMove = function(squareNumber){
         updateGameBoard(gameApi.makeMove($scope.gameModel.currentPlayer, squareNumber));
-        audioService.playSprite();
+        audioService.makeMoveAudioSprite();
     };
 
     $scope.switchPlayer1 = function(){
