@@ -5,8 +5,8 @@ noughtsAndCrossesApp.service('audioService', function($document,$timeout){
 
     var spriteData = {
         newGameData: {
-            start: 0,
-            length: 2
+            start: 0.75,
+            length: 0.9
         },
         makeMoveData: {
             start: 4,
@@ -19,7 +19,7 @@ noughtsAndCrossesApp.service('audioService', function($document,$timeout){
         audioSprite = document.createElement('audio');
         var source = document.createElement('source');
         audioSprite.appendChild(source);
-        source.src = 'sound/sound-sprite.aiff';
+        source.src = 'sound/sound-sprite.mp3';
         source.type = 'audio/mp3';
         document.body.appendChild(audioSprite);
     };
