@@ -10,7 +10,7 @@ module.exports = {
     },
     sound: {
         cwd:'',
-        src:'main-app/app/sound/*.mp3',
+        src:'main-app/app/sound/*',
         dest: '.build/',
         expand: true
     },

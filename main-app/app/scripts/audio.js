@@ -19,7 +19,7 @@ noughtsAndCrossesApp.service('audioService', function($document,$timeout){
         audioSprite = document.createElement('audio');
         var source = document.createElement('source');
         audioSprite.appendChild(source);
-        source.src = 'sound/sprites.mp3';
+        source.src = 'sound/sound-sprite.aiff';
         source.type = 'audio/mp3';
         document.body.appendChild(audioSprite);
     };
