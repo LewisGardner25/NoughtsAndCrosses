@@ -1,15 +1,18 @@
-noughtsAndCrossesApp.controller('noughtsAndCrossesController',function ($scope,gameModel,gameApi){
+noughtsAndCrossesApp.controller('noughtsAndCrossesController',function ($scope,gameModel,gameApi,audioService){
 
     $scope.gameModel = gameModel;
     $scope.gameApi = gameApi;
+    $scope.audioService = audioService;
 
     $scope.newGame = function(){
         gameModel.resetCurrentPlayer();
         updateGameBoard(gameApi.newGame($scope.gameModel.player1, $scope.gameModel.player2));
+        audioService.newGameAudioSprite();
     };
 
     $scope.makeMove = function(squareNumber){
         updateGameBoard(gameApi.makeMove($scope.gameModel.currentPlayer, squareNumber));
+        audioService.makeMoveAudioSprite();
     };
 
     $scope.switchPlayer1 = function(){
@@ -36,7 +39,7 @@ noughtsAndCrossesApp.controller('noughtsAndCrossesController',function ($scope,g
                     alert('Technical fault:' + errorMessage.httpStatus + ' Message: ' + errorMessage.message );
                 }
             });
-    };
+        };
 
 });
 
