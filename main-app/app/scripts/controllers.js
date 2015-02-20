@@ -25,7 +25,7 @@ noughtsAndCrossesApp.controller('noughtsAndCrossesController',function ($scope,g
 
     var updateGameBoard = function (promise){
         promise.then(function(newGameData){
-            $scope.gameModel.gameboard = newGameData.gameboard;
+            $scope.gameModel.updateGameBoard(newGameData);
             if($scope.gameModel.isNewGame())
                 {
                     $scope.gameModel.toggleCurrentPlayer();

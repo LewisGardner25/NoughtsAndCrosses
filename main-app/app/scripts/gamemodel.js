@@ -48,6 +48,13 @@ noughtsAndCrossesApp.service('gameModel', function(){
             this.currentPlayer = this.currentPlayer === 1?2:1;
         };
 
+        this.updateGameBoard = function(newGameModel){
+              var me = this;
+              me.gameboard = newGameModel.gameboard;
+              me.winner = newGameModel.winner;
+              me.displayWinnerMessage();
+        };
+
         this.switchPlayer1 = function(){
             var me = this;
             me.player1 = nextPlayerType(me.player1);
