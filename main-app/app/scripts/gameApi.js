@@ -1,4 +1,4 @@
-noughtsAndCrossesApp.service('gameApi',function ($http, $q){
+noughtsAndCrossesApp.service('gameApi',function ($http,$q,gameApiConstants){
 
     var serverCall = function (url, data) {
         var deferred = $q.defer();
@@ -25,7 +25,7 @@ noughtsAndCrossesApp.service('gameApi',function ($http, $q){
 
 
     this.newGame = function(player1Type, player2Type){
-        return serverCall('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/newgame',
+        return serverCall(gameApiConstants.newGameUrl,
         {
         'player1': player1Type,
         'player2': player2Type,
@@ -33,7 +33,7 @@ noughtsAndCrossesApp.service('gameApi',function ($http, $q){
     };
 
     this.makeMove = function(currentPlayer, squareNumber){
-        return serverCall('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/makemove',
+        return serverCall(gameApiConstants.makeMoveUrl,
         {
         'playerNumber': currentPlayer,
         'chosenSquare': squareNumber

@@ -9,6 +9,7 @@ module.exports = {
             'main-app/app/scripts/gameApi.js',
             'main-app/app/scripts/gamemodel.js',
             'main-app/app/scripts/audio.js',
+            'main-app/app/scripts/gameApiConstants.js',
             'main-app/app/scripts/winnerAlerts.js',
             'main-app/app/scripts/controllers.js'
             ],
