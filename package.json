@@ -13,6 +13,10 @@
     "grunt-include-replace": "^2.0.0",
     "grunt-lesslint": "^1.1.13",
     "jshint": "^2.5.6",
+    "karma": "^0.12.31",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^0.1.10",
+    "karma-phantomjs-launcher": "^0.1.4",
     "mocha": "^1.21.4",
     "phantomjs": "^1.9.10"
   },
