@@ -1,18 +1,32 @@
-describe('gameApiTest', function(gameModel){
-
-    var controllerMock;
+describe('gameApiTest', function(){
+    
+    var gameApi;
+    var gameModel;
 
     beforeEach(function(){
-        controllerMock = jasmine.createSpyObj('gameApi',['asyncCall']);
+        module('noughtsAndCrossesApp.gameApi');
+        module(function($provide){
+            $provide.constant('main-app/app/scripts/gameApi.js');
+        });
+        $injector(function($injector){
+            gameApi = $injector.get('main-app/app/scripts/gameApi.js');
+            gameModel = $injector.get('main-app/app/scripts/gameModel.js');
+        });
     });
 
     it('Should contain gameApi directive', function(){
-        expect(noughtsAndCrossesApp.gameApi).toBeDefined();
+        expect(noughtsAndCrossesApp.gameApi)
+            .to.have.property('noughtsAndCrossesApp.service(gameApi,function ($http,$q,gameApiConstants)')
     });
 
-    it('makeMove function contains API constants', function(){
+    it('makeMove function contains appropriate playerNumber and squareNumber', function(){
         expect(noughtsAndCrossesApp.gameApi.makeMove)
-            .to.have.property(gameModel.playerNumber = 'playerNumber',gameModel.squareNumber = 'squareNumber');
+            .to.have.property(gameApi.makeMove.playerNumber = 'playerNumber',gameModel.squareNumber = 'squareNumber');
+    });
+
+    it('newGame function contains constants', function(){
+        expect(noughtsAndCrossesApp.gameApi.newGame)
+            .to.have.property(gameModel);
     });
 
 });

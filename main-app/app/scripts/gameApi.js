@@ -28,7 +28,7 @@ noughtsAndCrossesApp.service('gameApi',function ($http,$q,gameApiConstants){
         return serverCall(gameApiConstants.newGameUrl,
         {
         'player1': player1Type,
-        'player2': player2Type,
+        'player2': player2Type
         });
     };
 
