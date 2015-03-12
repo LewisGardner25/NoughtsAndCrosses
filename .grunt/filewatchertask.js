@@ -3,7 +3,7 @@
  */
 module.exports = {
     scripts: {
-        files: 'main-app/app/scripts/*.js',
+        files: 'main-app/app/scripts/**/*.js',
         tasks: ['jshint','clean:scripts','concat:scripts'],
         options: {
             spawn: false
@@ -37,9 +37,18 @@ module.exports = {
             spawn: false
         }
     },
+
     angular: {
-        files: ['angular/*'],
+        files: ['bower_components/angular/*'],
         tasks: ['nostart'],
+        options: {
+            spawn: false
+        }
+    },
+
+    karma: {
+        files: ['unit-tests/**/*.js'],
+        tasks: ['karma'],
         options: {
             spawn: false
         }

@@ -22,7 +22,7 @@ module.exports = {
         expand: true
     },
     angular: {
-        cwd: '',
+        cwd: 'bower_components',
         src: 'angular/*',
         dest: '.build/main-app/app',
         expand: true
