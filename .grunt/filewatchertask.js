@@ -37,9 +37,18 @@ module.exports = {
             spawn: false
         }
     },
+
     angular: {
         files: ['bower_components/angular/*'],
         tasks: ['nostart'],
+        options: {
+            spawn: false
+        }
+    },
+
+    karma: {
+        files: ['unit-tests/**/*.js'],
+        tasks: ['karma'],
         options: {
             spawn: false
         }
