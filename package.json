@@ -23,7 +23,8 @@
     "karma-requirejs": "^0.2.2",
     "mocha": "^1.21.4",
     "phantomjs": "^1.9.10",
-    "requirejs": "^2.1.16"
+    "requirejs": "^2.1.16",
+    "sinon-chai": "^2.7.0"
   },
   "dependencies": {
     "express": "^4.10.1",
