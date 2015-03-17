@@ -14,7 +14,7 @@
             expect(gameApiConstants.newGameUrl).to.equal('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/newgame');
         });
 
-        it('Check make mmove constant as expected', function(){
+        it('Check make make move constant as expected', function(){
             expect(gameApiConstants.makeMoveUrl).to.equal('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/makemove');
         });
     });
