@@ -17,7 +17,8 @@ module.exports = function(config) {
     files: [
         'bower_components/angular/angular.js',
         'bower_components/angular-mocks/angular-mocks.js',
-        'unit-tests/*.js',
+        'unit-tests/game-api-constants-tests.js',
+        'unit-tests/game-model-test.js',
         'main-app/app/scripts/modules.js',
         'main-app/app/scripts/services/game-api-constants.js'
     ],

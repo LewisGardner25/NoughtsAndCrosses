@@ -1,6 +1,8 @@
 (function(){
     'use strict';
+
     describe('gameApiConstants checking API defaults are not altered', function(){
+
         var gameApiConstants;
 
         beforeEach(function(){
@@ -18,4 +20,5 @@
             expect(gameApiConstants.makeMoveUrl).to.equal('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/makemove');
         });
     });
+
 }());

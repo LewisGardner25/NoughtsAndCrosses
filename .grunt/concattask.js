@@ -7,7 +7,7 @@ module.exports = {
             [
             'main-app/app/scripts/modules.js',
             'main-app/app/scripts/gameApi.js',
-            'main-app/app/scripts/gamemodel.js',
+            'main-app/app/scripts/services/gamemodel.js',
             'main-app/app/scripts/audio.js',
             'main-app/app/scripts/services/gameApiConstants.js',
             'main-app/app/scripts/winnerAlerts.js',
