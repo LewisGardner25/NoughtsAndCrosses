@@ -1,4 +1,5 @@
-noughtsAndCrossesApp.controller('noughtsAndCrossesController',function ($scope,gameModel,gameApi,audioService){
+angular.module('tomboola.noughtAndCrosses')
+    .controller('noughtAndCrossesController',function ($scope,gameModel,gameApi,audioService){
 
     $scope.gameModel = gameModel;
     $scope.gameApi = gameApi;

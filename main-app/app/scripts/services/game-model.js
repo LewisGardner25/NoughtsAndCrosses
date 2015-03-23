@@ -1,4 +1,5 @@
-noughtsAndCrossesApp.service('gameModel', function(){
+angular.module('tombola.noughtAndCrosses.services')
+    .service('gameModel',function(){
 
     var gameModel = function(){
         this.gameboard = '000000000';

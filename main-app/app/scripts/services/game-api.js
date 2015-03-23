@@ -1,4 +1,5 @@
-noughtsAndCrossesApp.service('gameApi',function ($http,$q,gameApiConstants){
+angular.module('tombola.noughtAndCrosses.services')
+    .service('gameApi',function ($http,$q,gameApiConstants){
 
     var serverCall = function (url, data) {
         var deferred = $q.defer();
