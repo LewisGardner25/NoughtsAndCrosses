@@ -24,7 +24,6 @@ angular.module('tombola.noughtAndCrosses.services')
         return deferred.promise;
     };
 
-
     this.newGame = function(player1Type, player2Type){
         return serverCall(gameApiConstants.newGameUrl,
         {

@@ -26,7 +26,7 @@
 //
 //    it('gameApi service contains promise', function(){
 //        expect(noughtsAndCrossesApp.gameApi)
-//            .to.have.property(gameApi.to.have.property('serverCall'));
+//            .to.have.property(gameApi.to.have.property(gameApi.serverCall));
 //    });
 //
 //});

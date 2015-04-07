@@ -15,7 +15,7 @@ angular.module('tombola.noughtAndCrosses.services')
             return me.gameboard !=='000000000';
         };
 
-        var nextPlayerType = function(currentPlayer){
+        this.nextPlayerType = function(currentPlayer){
             if(currentPlayer === 'human'){
                 return 'random';
             }
@@ -58,12 +58,12 @@ angular.module('tombola.noughtAndCrosses.services')
 
         this.switchPlayer1 = function(){
             var me = this;
-            me.player1 = nextPlayerType(me.player1);
+            me.player1 = me.nextPlayerType(me.player1);
         };
 
         this.switchPlayer2 = function(){
             var me = this;
-            this.player2 = nextPlayerType(me.player2);
+            this.player2 = me.nextPlayerType(me.player2);
         };
 
         this.resetCurrentPlayer = function(){

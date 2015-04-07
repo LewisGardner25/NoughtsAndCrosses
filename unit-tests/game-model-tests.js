@@ -20,7 +20,17 @@
             expect(gameModel.player2).to.equal('human');
         });
 
-        it()
+        it('nextPlayerType function cycles through the different player types',function(){
+            expect(gameModel.nextPlayerType()).to.equal('human');
+        });
+
+        it('Switch player1 function cycles player1 through human, random and pre-trained',function(){
+            expect(gameModel.player1 = gameModel.nextPlayerType(gameModel.player1));
+        });
+
+        it('updateGameBoard updates the gameBoard inside the gameModel to its current state',function(){
+            expect(gameModel.updateGameBoard.gameModel);
+        });
 
     });
 }());
