@@ -32,5 +32,13 @@
             expect(gameModel.updateGameBoard.gameModel);
         });
 
+        it('Display winner message function returns the winner',function(){
+            expect(gameModel.displayWinnerMessage).to.equal('human');
+        });
+
+        it('toggleCurrentPlayer cycles between player 1 and 2',function(){
+            expect(gameModel.toggleCurrentPlayer).to.equal('player1'||'player2');
+        });
+
     });
 }());

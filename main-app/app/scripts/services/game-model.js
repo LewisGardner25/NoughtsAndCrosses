@@ -46,6 +46,7 @@ angular.module('tombola.noughtAndCrosses.services')
             if(this.player2 !== 'human'){
                 return;
             }
+
             this.currentPlayer = this.currentPlayer === 1?2:1;
         };
 
