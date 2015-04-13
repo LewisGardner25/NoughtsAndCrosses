@@ -15,28 +15,38 @@
             expect(gameModel.gameboard).to.equal('000000000');
         });
 
-        it('player1 and player2 are set to human upon beginning a new game',function(){
+        it('Test player1 type toggles correctly',function(){
             expect(gameModel.player1).to.equal('human');
+            gameModel.switchPlayer1();
+            expect(gameModel.player1).to.equal('random');
+            gameModel.switchPlayer1();
+            expect(gameModel.player1).to.equal('pre-trained');
+            gameModel.switchPlayer1();
+            expect(gameModel.player1).to.equal('human');
+        });
+
+        it('Test player2 type toggles correctly',function(){
+            expect(gameModel.player2).to.equal('human');
+            gameModel.switchPlayer1();
+            expect(gameModel.player2).to.equal('random');
+            gameModel.switchPlayer1();
+            expect(gameModel.player2).to.equal('pre-trained');
+            gameModel.switchPlayer1();
             expect(gameModel.player2).to.equal('human');
         });
 
-        it('nextPlayerType function cycles through the different player types',function(){
-            expect(gameModel.nextPlayerType()).to.equal('human');
-        });
-
-        it('Switch player1 function cycles player1 through human, random and pre-trained',function(){
-            expect(gameModel.player1 = gameModel.nextPlayerType(gameModel.player1));
-        });
-
         it('updateGameBoard updates the gameBoard inside the gameModel to its current state',function(){
-            expect(gameModel.updateGameBoard.gameModel);
+            //TODO: Test should check if game model is in a winning state
+            expect(gameModel.updateGameBoard.gameModel).to.equal('000000000');
         });
 
         it('Display winner message function returns the winner',function(){
+            //TODO: Checks which player is the winner
             expect(gameModel.displayWinnerMessage).to.equal('human');
         });
 
         it('toggleCurrentPlayer cycles between player 1 and 2',function(){
+            //TODO: Checks different player states
             expect(gameModel.toggleCurrentPlayer).to.equal('player1'||'player2');
         });
 
