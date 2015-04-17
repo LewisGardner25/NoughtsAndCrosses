@@ -17,9 +17,13 @@ module.exports = function(config) {
     files: [
         'bower_components/angular/angular.js',
         'bower_components/angular-mocks/angular-mocks.js',
-        'unit-tests/*.js',
         'main-app/app/scripts/modules.js',
-        'main-app/app/scripts/services/game-api-constants.js'
+        'main-app/app/scripts/services/game-api-constants.js',
+        'main-app/app/scripts/services/game-api.js',
+        'main-app/app/scripts/services/game-model.js',
+        //TODO: Add mock file(s) here
+        'unit-tests/**/*-tests.js',
+
     ],
 
 

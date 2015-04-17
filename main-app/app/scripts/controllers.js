@@ -1,4 +1,5 @@
-noughtsAndCrossesApp.controller('noughtsAndCrossesController',function ($scope,gameModel,gameApi,audioService){
+angular.module('tomboola.noughtAndCrosses')
+    .controller('noughtAndCrossesController',function ($scope,gameModel,gameApi,audioService){
 
     $scope.gameModel = gameModel;
     $scope.gameApi = gameApi;
@@ -25,11 +26,7 @@ noughtsAndCrossesApp.controller('noughtsAndCrossesController',function ($scope,g
 
     var updateGameBoard = function (promise){
         promise.then(function(newGameData){
-            $scope.gameModel.updateGameBoard(newGameData);
-            if($scope.gameModel.isNewGame())
-                {
-                    $scope.gameModel.toggleCurrentPlayer();
-                }
+                $scope.gameModel.updateGameBoard(newGameData);
             })
             .catch(function(errorMessage){
                 if(errorMessage.httpStatus == 500){

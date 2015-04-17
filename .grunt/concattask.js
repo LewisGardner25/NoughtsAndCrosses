@@ -6,10 +6,10 @@ module.exports = {
         src:
             [
             'main-app/app/scripts/modules.js',
-            'main-app/app/scripts/gameApi.js',
-            'main-app/app/scripts/gamemodel.js',
+            'main-app/app/scripts/services/game-api-constants.js',
+            'main-app/app/scripts/services/game-api.js',
+            'main-app/app/scripts/services/game-model.js',
             'main-app/app/scripts/audio.js',
-            'main-app/app/scripts/services/gameApiConstants.js',
             'main-app/app/scripts/winnerAlerts.js',
             'main-app/app/scripts/controllers.js'
             ],

@@ -1,4 +1,5 @@
-noughtsAndCrossesApp.service('gameApi',function ($http,$q,gameApiConstants){
+angular.module('tombola.noughtAndCrosses.services')
+    .service('gameApi',function ($http,$q,gameApiConstants){
 
     var serverCall = function (url, data) {
         var deferred = $q.defer();
@@ -10,6 +11,7 @@ noughtsAndCrossesApp.service('gameApi',function ($http,$q,gameApiConstants){
             headers: {
                 'content-type': 'application/json'
             }};
+
         $http(serverPost)
             .success(function(data){
                 deferred.resolve(data);
@@ -22,7 +24,6 @@ noughtsAndCrossesApp.service('gameApi',function ($http,$q,gameApiConstants){
             });
         return deferred.promise;
     };
-
 
     this.newGame = function(player1Type, player2Type){
         return serverCall(gameApiConstants.newGameUrl,

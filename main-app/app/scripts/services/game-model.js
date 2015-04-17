@@ -1,17 +1,21 @@
-noughtsAndCrossesApp.service('gameModel', function(){
+angular.module('tombola.noughtAndCrosses.services')
+    .service('gameModel',function(){
 
     var gameModel = function(){
-        this.gameboard = '000000000';
+        var me = this;
+        var NEW_GAME_BOARD = '000000000';
+
+
+        this.gameboard = NEW_GAME_BOARD;
         this.winner = 0;
         this.player1 = 'human';
         this.player2 = 'human';
         this.outcome = 'continue';
         this.currentPlayer = 1;
-        this.winnerName = 'No One';
+        this.winnerName = 'No One'; //TODO: Remove and use winner number - use filter
 
         this.isNewGame = function(){
-            var me = this;
-            return me.gameboard !=='000000000';
+            return me.gameboard === NEW_GAME_BOARD;
         };
 
         var nextPlayerType = function(currentPlayer){
@@ -25,7 +29,6 @@ noughtsAndCrossesApp.service('gameModel', function(){
         };
 
         this.displayWinnerMessage = function(){
-            var me = this;
             if(me.winner === 0){
                 me.winnerName = 'No One';
             }
@@ -35,38 +38,44 @@ noughtsAndCrossesApp.service('gameModel', function(){
             if(me.winner === '2'){
                 me.winnerName = 'Mark';
             }
-            return me.winnerName;
         };
 
-        this.toggleCurrentPlayer = function(){
-            if(this.player1 !== 'human'){
+        var toggleCurrentPlayer = function(){
+            if(me.player1 !== 'human'){
                 return;
             }
-            if(this.player2 !== 'human'){
+            if(me.player2 !== 'human'){
                 return;
             }
-            this.currentPlayer = this.currentPlayer === 1?2:1;
+
+            me.currentPlayer = me.currentPlayer === 1 ? 2 : 1;
         };
 
+        //TODO: pass in winner number
         this.updateGameBoard = function(newGameModel){
-              var me = this;
-              me.gameboard = newGameModel.gameboard;
-              me.winner = newGameModel.winner;
-              me.displayWinnerMessage();
+            me.gameboard = newGameModel.gameboard;
+            me.winner = newGameModel.winner;
+            me.displayWinnerMessage();
+            //todo : update winner number
+            if(!me.isNewGame()) {
+                toggleCurrentPlayer();
+            }
         };
 
         this.switchPlayer1 = function(){
-            var me = this;
             me.player1 = nextPlayerType(me.player1);
         };
 
         this.switchPlayer2 = function(){
-            var me = this;
             this.player2 = nextPlayerType(me.player2);
         };
 
+
+        //TODO: KPB Rename reset...
         this.resetCurrentPlayer = function(){
-            var me = this;
+            me.winnerName = 'No One';
+            me.gameboard = NEW_GAME_BOARD;
+            //todo: reset winner number
             if(me.player1 === 'human'){
                 me.currentPlayer = 1;
                 return;

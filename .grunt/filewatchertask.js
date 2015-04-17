@@ -47,7 +47,7 @@ module.exports = {
     },
 
     karma: {
-        files: ['unit-tests/**/*.js'],
+        files: ['unit-tests/*.js'],
         tasks: ['karma'],
         options: {
             spawn: false
