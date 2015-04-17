@@ -36,12 +36,18 @@
             expect(gameModel.player2).to.equal('human');
         });
 
+        it('updateGameBoard updates the gameBoard inside the gameModel to its current state',function(){
+            expect(gameModel.updateGameBoard);
+        });
+
         it('Display winner message function returns the winner name',function(){
-            expect(gameModel.displayWinnerMessage).to.equal(gameModel.winnerName === 'No One');
+            gameModel.displayWinnerMessage();
+            expect(gameModel.winnerName === 'No One');
         });
 
         it('resetCurrentPlayer finds which player is selected ',function(){
-            expect(gameModel.resetCurrentPlayer).to.equal(gameModel.currentPlayer === 1||2);
+            gameModel.resetCurrentPlayer();
+            expect(gameModel.currentPlayer === 1);
         });
 
     });

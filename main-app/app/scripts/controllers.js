@@ -26,11 +26,7 @@ angular.module('tomboola.noughtAndCrosses')
 
     var updateGameBoard = function (promise){
         promise.then(function(newGameData){
-            $scope.gameModel.updateGameBoard(newGameData);
-            if($scope.gameModel.isNewGame())
-                {
-                    $scope.gameModel.toggleCurrentPlayer();
-                }
+                $scope.gameModel.updateGameBoard(newGameData);
             })
             .catch(function(errorMessage){
                 if(errorMessage.httpStatus == 500){
