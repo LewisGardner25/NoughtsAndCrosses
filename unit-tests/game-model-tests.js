@@ -1,6 +1,6 @@
 (function(){
     'use strict';
-    describe('*******TODO*******', function(){
+    describe('gameModel Unit Tests', function(){
 
         var gameModel;
 
@@ -27,27 +27,20 @@
 
         it('Test player2 type toggles correctly',function(){
             expect(gameModel.player2).to.equal('human');
-            gameModel.switchPlayer1();
+            gameModel.switchPlayer2();
             expect(gameModel.player2).to.equal('random');
-            gameModel.switchPlayer1();
+            gameModel.switchPlayer2();
             expect(gameModel.player2).to.equal('pre-trained');
-            gameModel.switchPlayer1();
+            gameModel.switchPlayer2();
             expect(gameModel.player2).to.equal('human');
         });
 
-        it('updateGameBoard updates the gameBoard inside the gameModel to its current state',function(){
-            //TODO: Test should check if game model is in a winning state
-            expect(gameModel.updateGameBoard.gameModel).to.equal('000000000');
-        });
-
         it('Display winner message function returns the winner',function(){
-            //TODO: Checks which player is the winner
-            expect(gameModel.displayWinnerMessage).to.equal('human');
+            expect(gameModel.displayWinnerMessage).to.equal(gameModel.winnerName);
         });
 
-        it('toggleCurrentPlayer cycles between player 1 and 2',function(){
-            //TODO: Checks different player states
-            expect(gameModel.toggleCurrentPlayer).to.equal('player1'||'player2');
+        it('resetCurrentPlayer finds which player is selected ',function(){
+            expect(gameModel.resetCurrentPlayer).to.equal();
         });
 
     });
