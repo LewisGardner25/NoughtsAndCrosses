@@ -12,6 +12,7 @@
         });
 
         it('Checks if a new game has been created',function(){
+            gameModel.isNewGame();
             expect(gameModel.gameboard).to.equal('000000000');
         });
 
@@ -35,12 +36,12 @@
             expect(gameModel.player2).to.equal('human');
         });
 
-        it('Display winner message function returns the winner',function(){
-            expect(gameModel.displayWinnerMessage).to.equal(gameModel.winnerName);
+        it('Display winner message function returns the winner name',function(){
+            expect(gameModel.displayWinnerMessage).to.equal(gameModel.winnerName === 'No One');
         });
 
         it('resetCurrentPlayer finds which player is selected ',function(){
-            expect(gameModel.resetCurrentPlayer).to.equal();
+            expect(gameModel.resetCurrentPlayer).to.equal(gameModel.currentPlayer === 1||2);
         });
 
     });
