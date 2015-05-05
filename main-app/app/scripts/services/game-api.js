@@ -6,8 +6,9 @@ angular.module('tombola.noughtAndCrosses.services')
         var serverPost = {
             method: 'POST',
             url: url,
+
             data: data,
-            'withCredentials': 'true',
+            'wit1hCredentials': 'true',
             headers: {
                 'content-type': 'application/json'
             }};
