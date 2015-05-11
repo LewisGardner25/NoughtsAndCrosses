@@ -4,6 +4,8 @@ describe('gameApiTest', function(){
     var gameModel;
 
     beforeEach(function(){
+
+
         module('tombola.noughtAndCrosses.services');
         inject(function($injector){
             gameApi = $injector.get('gameApi');
@@ -20,4 +22,9 @@ describe('gameApiTest', function(){
         gameApi.makeMove();
         expect(gameModel.currentPlayer).to.equal(1||2);
     });
+
+    it('serverCall returns a promise',function(){
+        expect().to.equal();
+    });
+
 });
