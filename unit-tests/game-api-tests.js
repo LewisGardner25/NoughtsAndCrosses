@@ -1,7 +1,6 @@
 describe('gameApiTest', function(){
 
     var gameApi;
-    var gameModel;
     var $httpBackend;
 
     beforeEach(function(){
@@ -18,11 +17,10 @@ describe('gameApiTest', function(){
     });
 
     it('newGame function should reset the game board', function(){
-        //TODO: set expectation on $http backaend - expect POST, URL and Data
-        gameApi.newGame(/*TODO Pass test values */);
-        //TODO: Finish Up $Http backend requests
-
-        //TODO: Check returned values from service
+        $httpBackend.expect('POST', 'url', 'data');
+        gameApi.newGame('human','human');
+        $httpBackend.when('');
+        expect(mocks.newGameUrl).to.equal('000000000')
     });
 
     it('makeMove function finds currentPlayer and squareNumber placement',function(){
