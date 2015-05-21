@@ -19,21 +19,18 @@ describe('gameApiTest', function(){
     it('newGame function should reset the game board', function(){
         $httpBackend.expect('POST', 'url', 'data');
         gameApi.newGame('human','human');
-        $httpBackend.when('');
+        $httpBackend.when('POST','http://EUTAVEG-01.tombola.emea:35000/api/v1.0/newgame').respond(200,'Posted');
         expect(mocks.newGameUrl).to.equal('000000000')
     });
 
     it('makeMove function finds currentPlayer and squareNumber placement',function(){
-        //gameApi.makeMove();
-        //expect(gameModel.currentPlayer).to.equal(1||2);
-    });
-
-    it('serverCall returns a promise',function(){
-        expect().to.equal();
+        gameApi.makeMove();
+        expect(gameModel.currentPlayer).to.equal(1||2);
     });
 
     afterEach(function(){
-        //TODO: Make sure expected calls have happened.
+        $httpBackend.verifyNoOutstandingExpectation();
+        $httpBackend.verifyNoOutstandingRequest();
     });
 
 });
