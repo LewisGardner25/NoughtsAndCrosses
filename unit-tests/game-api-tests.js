@@ -4,12 +4,10 @@ describe('gameApiTest', function(){
     var $httpBackend;
 
     beforeEach(function(){
-
         module('tombola.noughtAndCrosses.services');
         module(function($provide) {
-            $provide.value('gameApiConstants', mocks.gameApiConstants);
+            $provide.constant('gameApiConstants', mocks.gameApiConstants);
         });
-
         inject(function($injector){
             gameApi = $injector.get('gameApi');
             $httpBackend = $injector.get('$httpBackend');
@@ -17,20 +15,17 @@ describe('gameApiTest', function(){
     });
 
     it('newGame function should reset the game board', function(){
-        $httpBackend.expect('POST', 'url', 'data');
+        $httpBackend.expect('post', 'url', 'data');
         gameApi.newGame('human','human');
-        $httpBackend.when('POST','http://EUTAVEG-01.tombola.emea:35000/api/v1.0/newgame').respond(200,'Posted');
-        expect(mocks.newGameUrl).to.equal('000000000')
+        $httpBackend.when('POST').respond(200,'Posted');
+        expect(mocks.gameApiConstants.newGameUrl).to.equal(mocks.gameApiConstants.newGameUrl);
     });
 
     it('makeMove function finds currentPlayer and squareNumber placement',function(){
+        $httpBackend.expect('post','url','data');
         gameApi.makeMove();
-        expect(gameModel.currentPlayer).to.equal(1||2);
-    });
-
-    afterEach(function(){
-        $httpBackend.verifyNoOutstandingExpectation();
-        $httpBackend.verifyNoOutstandingRequest();
+        $httpBackend.when('POST').respond(200,'Posted');
+        expect(mocks.gameApiConstants.makeMoveUrl).to.equal(mocks.gameApiConstants.makeMoveUrl);
     });
 
 });

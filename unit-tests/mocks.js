@@ -4,4 +4,4 @@ var mocks = {
         newGameUrl: 'newgameUrl',
         makeMoveUrl: 'makemoveUrl'
     }
-}
+};
