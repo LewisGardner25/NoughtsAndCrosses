@@ -11,11 +11,9 @@
             });
         });
 
-        it('createSpriteElement creates a new sprite',function(){
+        it.skip('createSpriteElement creates a new sprite in HTML',function(){
 
         });
-
-
 
     });
 }());
